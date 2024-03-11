@@ -1,0 +1,304 @@
+[gd_scene load_steps=17 format=3 uid="uid://d4bgiairmn07c"]
+
+[ext_resource type="FontFile" uid="uid://bike0lalw5uvu" path="res://resources/fonts/UbuntuMono-R.ttf" id="1_2lf8u"]
+[ext_resource type="Script" path="res://script/main_menu.gd" id="1_06h0i"]
+[ext_resource type="FontFile" uid="uid://blholmp2bfhev" path="res://resources/fonts/Geo.otf" id="2_6507l"]
+[ext_resource type="Script" path="res://script/PlayMenu.gd" id="4_emiuc"]
+[ext_resource type="PackedScene" uid="uid://c2pgmjkhh0du1" path="res://scene/server_i.tscn" id="5_qvx6v"]
+[ext_resource type="PackedScene" uid="uid://ch6pyqk2li5oq" path="res://scene/player_i.tscn" id="6_p4e6h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2qfq"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.858824, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sd2kt"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12puc"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.878431, 0.584314, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2l26d"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.980392, 0.654902, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyr0l"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.172549, 0.694118, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1o3vv"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.207843, 0.811765, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nl7w"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.518503, 0.518503, 0.518503, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x7rgq"]
+border_width_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8ya8"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.518503, 0.518503, 0.518503, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40oux"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06h0i")
+
+[node name="Mcont" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="Vbox" type="VBoxContainer" parent="Mcont"]
+layout_mode = 2
+
+[node name="Title" type="HBoxContainer" parent="Mcont/Vbox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Mcont/Vbox/Title"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 54
+text = "Kuarkers"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Mcont/Vbox/Title"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6507l")
+theme_override_font_sizes/font_size = 54
+text = " : Remake"
+vertical_alignment = 1
+
+[node name="Hbox" type="HBoxContainer" parent="Mcont/Vbox"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="Mcont/Vbox/Hbox"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_m2qfq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m2qfq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sd2kt")
+text = "Keluar"
+
+[node name="Button2" type="Button" parent="Mcont/Vbox/Hbox"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_12puc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_12puc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2l26d")
+text = "Pengaturan"
+
+[node name="Button3" type="Button" parent="Mcont/Vbox/Hbox"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyr0l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jyr0l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1o3vv")
+text = "Main"
+
+[node name="Button4" type="Label" parent="Mcont/Vbox/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_5nl7w")
+text = "V 1.0.0"
+
+[node name="PlayMenu" type="ColorRect" parent="Mcont"]
+visible = false
+layout_mode = 2
+color = Color(0.172549, 0.172549, 0.172549, 1)
+script = ExtResource("4_emiuc")
+server_i = ExtResource("5_qvx6v")
+player_i = ExtResource("6_p4e6h")
+
+[node name="Mcont" type="MarginContainer" parent="Mcont/PlayMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Hbox" type="HBoxContainer" parent="Mcont/PlayMenu/Mcont"]
+layout_mode = 2
+
+[node name="Vbox2" type="VBoxContainer" parent="Mcont/PlayMenu/Mcont/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox2" groups=["wait_menu"]]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_m2qfq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m2qfq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sd2kt")
+text = "Keluar"
+
+[node name="Button3" type="Button" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox2" groups=["info_menu"]]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyr0l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jyr0l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1o3vv")
+text = "Buat Permainan"
+
+[node name="Button4" type="Button" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyr0l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jyr0l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1o3vv")
+text = "Mulai"
+
+[node name="VSeparator" type="VSeparator" parent="Mcont/PlayMenu/Mcont/Hbox"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_x7rgq")
+
+[node name="Scont2" type="ScrollContainer" parent="Mcont/PlayMenu/Mcont/Hbox" groups=["wait_menu"]]
+visible = false
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="PlayerList" type="VBoxContainer" parent="Mcont/PlayMenu/Mcont/Hbox/Scont2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Vbox" type="VBoxContainer" parent="Mcont/PlayMenu/Mcont/Hbox" groups=["info_menu"]]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_v8ya8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v8ya8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_40oux")
+text = "Refresh"
+
+[node name="Scont" type="ScrollContainer" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ServerList" type="VBoxContainer" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox/Scont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Timer" type="Timer" parent="Mcont/PlayMenu"]
+wait_time = 0.75
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "false"
+
+[connection signal="gui_input" from="Mcont" to="." method="_on_m_cont_gui_input"]
+[connection signal="pressed" from="Mcont/Vbox/Hbox/Button" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Mcont/Vbox/Hbox/Button3" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Mcont/PlayMenu/Mcont/Hbox/Vbox2/Button" to="Mcont/PlayMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="Mcont/PlayMenu/Mcont/Hbox/Vbox2/Button3" to="Mcont/PlayMenu" method="_on_create_pressed"]
+[connection signal="pressed" from="Mcont/PlayMenu/Mcont/Hbox/Vbox2/Button4" to="Mcont/PlayMenu" method="_start_game"]
+[connection signal="pressed" from="Mcont/PlayMenu/Mcont/Hbox/Vbox/Button" to="Mcont/PlayMenu" method="_on_refresh"]
+[connection signal="timeout" from="Mcont/PlayMenu/Timer" to="Mcont/PlayMenu" method="_on_br_out"]

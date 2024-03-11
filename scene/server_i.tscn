@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2pgmjkhh0du1"]
+
+[ext_resource type="FontFile" uid="uid://bike0lalw5uvu" path="res://resources/fonts/UbuntuMono-R.ttf" id="1_ln4dk"]
+[ext_resource type="Script" path="res://script/server_interface.gd" id="2_am0sy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrehy"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lp8c"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(0, 60)
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_ln4dk")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_hrehy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hrehy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6lp8c")
+text = "test"
+script = ExtResource("2_am0sy")
