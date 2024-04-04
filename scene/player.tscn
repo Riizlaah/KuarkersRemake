@@ -1,4 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctigio75yist6"]
+[gd_scene load_steps=12 format=3 uid="uid://ctigio75yist6"]
+
+[ext_resource type="Script" path="res://script/player.gd" id="1_ljao8"]
+[ext_resource type="Resource" uid="uid://cjvpadmoc0mdo" path="res://resources/items/plank.tres" id="2_3s42m"]
+[ext_resource type="FontFile" uid="uid://bike0lalw5uvu" path="res://resources/fonts/UbuntuMono-R.ttf" id="2_cos7i"]
+[ext_resource type="Texture2D" uid="uid://c2t4a35pm8dfl" path="res://textures/crosshair/crosshair2.png" id="2_rb711"]
+[ext_resource type="FontFile" uid="uid://blholmp2bfhev" path="res://resources/fonts/Geo.otf" id="2_w1jip"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjl8g"]
 
@@ -70,12 +76,31 @@ bind/14/name = &"Bone.014"
 bind/14/bone = -1
 bind/14/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, 0)
 
-[node name="Player" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_afg85"]
+size = Vector3(2.5, 6.5, 1)
 
-[node name="Node3D" type="Node3D" parent="."]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3i5r"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.12549, 0.490196, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbl1h"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.14902, 0.560784, 0, 1)
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 3
+floor_max_angle = 1.39626
+script = ExtResource("1_ljao8")
+main_item = ExtResource("2_3s42m")
+
+[node name="Skeleton3D" type="Skeleton3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="Skeleton3D" type="Skeleton3D" parent="Node3D"]
 bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -182,15 +207,115 @@ bones/14/position = Vector3(0, 0.5, 0)
 bones/14/rotation = Quaternion(0, 0, 0, 1)
 bones/14/scale = Vector3(1, 1, 1)
 
-[node name="Cube" type="MeshInstance3D" parent="Node3D/Skeleton3D"]
+[node name="Cube" type="MeshInstance3D" parent="Skeleton3D"]
 mesh = SubResource("ArrayMesh_o4qte")
 skin = SubResource("Skin_dfiiv")
 
-[node name="Head" type="BoneAttachment3D" parent="Node3D/Skeleton3D"]
+[node name="Head" type="BoneAttachment3D" parent="Skeleton3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 bone_name = "Bone.014"
 bone_idx = 14
 override_pose = true
+use_external_skeleton = true
+external_skeleton = NodePath("..")
 
-[node name="Camera3D" type="Camera3D" parent="Node3D/Skeleton3D/Head"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.37114e-08, 0.5, 0.5)
+[node name="Camera3D" type="Camera3D" parent="Skeleton3D/Head"]
+transform = Transform3D(-1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, -1, 0, 0.5, 0.25)
+
+[node name="RayCast3D" type="RayCast3D" parent="Skeleton3D/Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+target_position = Vector3(0, 0, -12)
+collision_mask = 7
+
+[node name="Label3D" type="Label3D" parent="Skeleton3D/Head/Camera3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.18557e-08, 1, 0.25)
+pixel_size = 0.01
+text = "Hecker"
+font = ExtResource("2_w1jip")
+font_size = 48
+
+[node name="Colls" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.98375, 0)
+shape = SubResource("BoxShape3D_afg85")
+
+[node name="Layer1" type="CanvasLayer" parent="." groups=["layers"]]
+
+[node name="Control" type="Control" parent="Layer1"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Layer1/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rb711")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Layer1/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_cos7i")
+theme_override_font_sizes/font_size = 24
+
+[node name="Layer2" type="CanvasLayer" parent="." groups=["layers"]]
+
+[node name="Panel" type="Panel" parent="Layer2"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hbox" type="HBoxContainer" parent="Layer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Vbox" type="VBoxContainer" parent="Layer2/Panel/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Button" type="Button" parent="Layer2/Panel/Hbox/Vbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_cos7i")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_x3i5r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x3i5r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sbl1h")
+text = "Simpan & Keluar"
+
+[node name="VSeparator" type="VSeparator" parent="Layer2/Panel/Hbox"]
+layout_mode = 2
+
+[node name="Vbox2" type="VBoxContainer" parent="Layer2/Panel/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Pause" type="CheckButton" parent="Layer2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -55.0
+offset_bottom = 31.0
+grow_horizontal = 0
+focus_mode = 0
+text = "Pause"
+
+[connection signal="gui_input" from="Layer1/Control" to="." method="_on_control_gui_input"]
+[connection signal="pressed" from="Layer2/Panel/Hbox/Vbox/Button" to="." method="_on_save_pressed"]
+[connection signal="toggled" from="Layer2/Pause" to="." method="_on_pause_toggled"]

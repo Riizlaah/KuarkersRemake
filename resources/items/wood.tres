@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BaseObject3D" load_steps=3 format=3 uid="uid://tyosnjte14yr"]
+
+[ext_resource type="Script" path="res://resources/items/scripts/BaseObject3D.gd" id="1_5tiw5"]
+[ext_resource type="PackedScene" uid="uid://bj0teka8e4m3o" path="res://scene/plc_objects/wood.tscn" id="1_xnkf2"]
+
+[resource]
+script = ExtResource("1_5tiw5")
+scene = ExtResource("1_xnkf2")
+obj_scale = 2.0
+obj_id = 0
+name = ""
+stackable = false
+stack_count = 1

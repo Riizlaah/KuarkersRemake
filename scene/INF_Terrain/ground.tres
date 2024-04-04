@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://4s78f67knar4"]
+
+[ext_resource type="Shader" path="res://resources/shader/procedural_generation.gdshader" id="1_qxjyk"]
+
+[sub_resource type="Gradient" id="Gradient_o1ch6"]
+offsets = PackedFloat32Array(0.7, 0.76875)
+colors = PackedColorArray(0.0575681, 0.777575, 0, 1, 0.760991, 0.471429, 0.237289, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fri1x"]
+gradient = SubResource("Gradient_o1ch6")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qxjyk")
+shader_parameter/min_height = 0.0
+shader_parameter/max_height = 1.0
+shader_parameter/trn_color = SubResource("GradientTexture2D_fri1x")

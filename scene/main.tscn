@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d4bgiairmn07c"]
+[gd_scene load_steps=41 format=3 uid="uid://d4bgiairmn07c"]
 
 [ext_resource type="FontFile" uid="uid://bike0lalw5uvu" path="res://resources/fonts/UbuntuMono-R.ttf" id="1_2lf8u"]
 [ext_resource type="Script" path="res://script/main_menu.gd" id="1_06h0i"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://script/PlayMenu.gd" id="4_emiuc"]
 [ext_resource type="PackedScene" uid="uid://c2pgmjkhh0du1" path="res://scene/server_i.tscn" id="5_qvx6v"]
 [ext_resource type="PackedScene" uid="uid://ch6pyqk2li5oq" path="res://scene/player_i.tscn" id="6_p4e6h"]
+[ext_resource type="PackedScene" uid="uid://c76xgaochxtqu" path="res://scene/world_if.tscn" id="7_e8bvu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2qfq"]
 content_margin_left = 15.0
@@ -73,28 +74,220 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nl7w"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4ivn"]
 content_margin_left = 15.0
 content_margin_top = 15.0
 content_margin_right = 15.0
 content_margin_bottom = 15.0
-bg_color = Color(0.518503, 0.518503, 0.518503, 1)
+bg_color = Color(0.314316, 0.314316, 0.314316, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x7rgq"]
-border_width_left = 4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsd3b"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.380392, 0.380392, 0.380392, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8ya8"]
 content_margin_left = 15.0
 content_margin_top = 15.0
 content_margin_right = 15.0
 content_margin_bottom = 15.0
-bg_color = Color(0.518503, 0.518503, 0.518503, 1)
+bg_color = Color(0.424931, 0.424931, 0.424931, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40oux"]
 content_margin_left = 15.0
 content_margin_top = 15.0
 content_margin_right = 15.0
 content_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1j246"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x7rgq"]
+border_width_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6q56"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+border_width_top = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sbvo"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkxgj"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfkry"]
+bg_color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk6qk"]
+bg_color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctexi"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.106237, 0.106237, 0.106237, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qn1du"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.106237, 0.106237, 0.106237, 1)
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pbgv"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xtui"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6lct"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jaf05"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.168627, 0.168627, 0.168627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g444v"]
+bg_color = Color(0.286275, 0.286275, 0.286275, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84o1s"]
+content_margin_top = 10.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtkcq"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+bg_color = Color(0.145098, 0.145098, 0.145098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdkpo"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewde3"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.231518, 0.231518, 0.231518, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhmwx"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.305882, 0.305882, 0.305882, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37no6"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.172549, 0.694118, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o25k1"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.203922, 0.803922, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iew4e"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.568627, 0.733333, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj0mm"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.647059, 0.831373, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -104,6 +297,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_06h0i")
+version = "beta0.2"
+
+[node name="Mcont2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Developer" type="Label" parent="Mcont2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 24
+
+[node name="Version" type="Label" parent="Mcont2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 24
 
 [node name="Mcont" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -126,14 +346,14 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Mcont/Vbox/Title"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_2lf8u")
-theme_override_font_sizes/font_size = 54
+theme_override_font_sizes/font_size = 64
 text = "Kuarkers"
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Mcont/Vbox/Title"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_6507l")
-theme_override_font_sizes/font_size = 54
+theme_override_font_sizes/font_size = 64
 text = " : Remake"
 vertical_alignment = 1
 
@@ -146,7 +366,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_2lf8u")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_m2qfq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m2qfq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sd2kt")
@@ -156,7 +376,7 @@ text = "Keluar"
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_2lf8u")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_12puc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_12puc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2l26d")
@@ -166,19 +386,23 @@ text = "Pengaturan"
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_2lf8u")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_jyr0l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jyr0l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1o3vv")
 text = "Main"
 
-[node name="Button4" type="Label" parent="Mcont/Vbox/Hbox"]
+[node name="Button4" type="Button" parent="Mcont/Vbox/Hbox"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 10
+focus_mode = 0
 theme_override_fonts/font = ExtResource("1_2lf8u")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_5nl7w")
-text = "V 1.0.0"
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_l4ivn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l4ivn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hsd3b")
+text = "i"
 
 [node name="PlayMenu" type="ColorRect" parent="Mcont"]
 visible = false
@@ -187,6 +411,7 @@ color = Color(0.172549, 0.172549, 0.172549, 1)
 script = ExtResource("4_emiuc")
 server_i = ExtResource("5_qvx6v")
 player_i = ExtResource("6_p4e6h")
+world_if_s = ExtResource("7_e8bvu")
 
 [node name="Mcont" type="MarginContainer" parent="Mcont/PlayMenu"]
 layout_mode = 1
@@ -202,10 +427,22 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Hbox" type="HBoxContainer" parent="Mcont/PlayMenu/Mcont"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Vbox2" type="VBoxContainer" parent="Mcont/PlayMenu/Mcont/Hbox"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Scont" type="ScrollContainer" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox2" groups=["info_menu"]]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Worlds" type="VBoxContainer" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox2/Scont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox2" groups=["wait_menu"]]
 visible = false
@@ -220,18 +457,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_m2qfq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sd2kt")
 text = "Keluar"
 
-[node name="Button3" type="Button" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox2" groups=["info_menu"]]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-focus_mode = 0
-theme_override_fonts/font = ExtResource("1_2lf8u")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_jyr0l")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jyr0l")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1o3vv")
-text = "Buat Permainan"
-
 [node name="Button4" type="Button" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox2"]
 visible = false
 layout_mode = 2
@@ -244,6 +469,31 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jyr0l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jyr0l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1o3vv")
 text = "Mulai"
+
+[node name="Hbox" type="HBoxContainer" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox2" groups=["info_menu"]]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Button3" type="Button" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox2/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyr0l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jyr0l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1o3vv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1o3vv")
+text = "Buat Dunia Baru"
+
+[node name="Refresh" type="Button" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox2/Hbox"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_v8ya8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v8ya8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_40oux")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1j246")
+text = "Refresh"
 
 [node name="VSeparator" type="VSeparator" parent="Mcont/PlayMenu/Mcont/Hbox"]
 layout_mode = 2
@@ -264,12 +514,13 @@ theme_override_constants/separation = 8
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox"]
+[node name="Refresh" type="Button" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox"]
 layout_mode = 2
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_v8ya8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v8ya8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_40oux")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1j246")
 text = "Refresh"
 
 [node name="Scont" type="ScrollContainer" parent="Mcont/PlayMenu/Mcont/Hbox/Vbox"]
@@ -287,18 +538,375 @@ theme_override_constants/separation = 8
 [node name="Timer" type="Timer" parent="Mcont/PlayMenu"]
 wait_time = 0.75
 
+[node name="Settings" type="TabContainer" parent="Mcont"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_x6q56")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_8sbvo")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_gkxgj")
+theme_override_styles/panel = SubResource("StyleBoxFlat_gfkry")
+theme_override_styles/tabbar_background = SubResource("StyleBoxFlat_xk6qk")
+tab_alignment = 1
+current_tab = 1
+tab_focus_mode = 0
+
+[node name="Umum" type="MarginContainer" parent="Mcont/Settings"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Vbox" type="VBoxContainer" parent="Mcont/Settings/Umum"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Mcont/Settings/Umum/Vbox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctexi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qn1du")
+placeholder_text = "Nama Pemain..."
+
+[node name="Hbox" type="HBoxContainer" parent="Mcont/Settings/Umum/Vbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Mcont/Settings/Umum/Vbox/Hbox"]
+custom_minimum_size = Vector2(221, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 26
+text = "Sensivitas[ 100 ]"
+horizontal_alignment = 3
+
+[node name="HSlider" type="HSlider" parent="Mcont/Settings/Umum/Vbox/Hbox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_2pbgv")
+
+[node name="Grafik" type="MarginContainer" parent="Mcont/Settings"]
+layout_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="Mcont/Settings/Grafik"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Shadow" type="CheckButton" parent="Mcont/Settings/Grafik/Vbox"]
+custom_minimum_size = Vector2(269, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 26
+text = "Bayangan[ aktif ]"
+
+[node name="Resolution" type="OptionButton" parent="Mcont/Settings/Grafik/Vbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_2xtui")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2xtui")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w6lct")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jaf05")
+item_count = 1
+selected = 0
+fit_to_longest_item = false
+popup/item_0/text = "Resolusi"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+
+[node name="Rendering" type="MarginContainer" parent="Mcont/Settings"]
+visible = false
+layout_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="Mcont/Settings/Rendering"]
+layout_mode = 2
+alignment = 1
+
+[node name="Hbox" type="HBoxContainer" parent="Mcont/Settings/Rendering/Vbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Mcont/Settings/Rendering/Vbox/Hbox"]
+custom_minimum_size = Vector2(325, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 26
+text = "Jarak Pandang[ 64 chunk ]"
+horizontal_alignment = 3
+
+[node name="HSlider" type="HSlider" parent="Mcont/Settings/Rendering/Vbox/Hbox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_2pbgv")
+min_value = 1.0
+max_value = 64.0
+value = 1.0
+
+[node name="Label" type="Label" parent="Mcont/Settings/Rendering/Vbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.486275, 0.486275, 0.486275, 1)
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 18
+text = "*1chunk = 64m"
+
 [node name="Label" type="Label" parent="."]
 visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "false"
+offset_right = 115.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 20
+text = "NOT LISTEN"
+
+[node name="CWM" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CWM"]
+custom_minimum_size = Vector2(752, 408)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -376.0
+offset_top = -204.0
+offset_right = 376.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g444v")
+
+[node name="Label" type="Label" parent="CWM/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_right = 75.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_84o1s")
+text = "Buat Dunia Baru"
+
+[node name="Mcont" type="MarginContainer" parent="CWM/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Hbox" type="HBoxContainer" parent="CWM/Panel/Mcont"]
+layout_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="CWM/Panel/Mcont/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="WorldName" type="LineEdit" parent="CWM/Panel/Mcont/Hbox/Vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_mtkcq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fdkpo")
+placeholder_text = "Nama Dunia..."
+
+[node name="Hbox" type="HBoxContainer" parent="CWM/Panel/Mcont/Hbox/Vbox"]
+layout_mode = 2
+
+[node name="Seed" type="LineEdit" parent="CWM/Panel/Mcont/Hbox/Vbox/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_mtkcq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fdkpo")
+placeholder_text = "Seed..."
+virtual_keyboard_type = 2
+
+[node name="Rand" type="Button" parent="CWM/Panel/Mcont/Hbox/Vbox/Hbox"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+focus_mode = 0
+text = "Rand"
+
+[node name="M" type="Control" parent="CWM/Panel/Mcont/Hbox/Vbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Hbox2" type="HBoxContainer" parent="CWM/Panel/Mcont/Hbox/Vbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Cancel" type="Button" parent="CWM/Panel/Mcont/Hbox/Vbox/Hbox2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_6507l")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ewde3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ewde3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bhmwx")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bhmwx")
+text = "Batal"
+
+[node name="Button2" type="Button" parent="CWM/Panel/Mcont/Hbox/Vbox/Hbox2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_6507l")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_37no6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_37no6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o25k1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_o25k1")
+text = "Buat Dunia"
+
+[node name="EWM" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="EWM"]
+custom_minimum_size = Vector2(752, 408)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -376.0
+offset_top = -204.0
+offset_right = 376.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g444v")
+
+[node name="Label" type="Label" parent="EWM/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_right = 75.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_84o1s")
+text = "Edit Dunia P"
+
+[node name="Mcont" type="MarginContainer" parent="EWM/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Hbox" type="HBoxContainer" parent="EWM/Panel/Mcont"]
+layout_mode = 2
+
+[node name="Vbox" type="VBoxContainer" parent="EWM/Panel/Mcont/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="WorldName" type="LineEdit" parent="EWM/Panel/Mcont/Hbox/Vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_mtkcq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fdkpo")
+placeholder_text = "Nama Dunia..."
+
+[node name="Label" type="Label" parent="EWM/Panel/Mcont/Hbox/Vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2lf8u")
+theme_override_font_sizes/font_size = 28
+text = "Seed : 0"
+
+[node name="M" type="Control" parent="EWM/Panel/Mcont/Hbox/Vbox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Hbox2" type="HBoxContainer" parent="EWM/Panel/Mcont/Hbox/Vbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Cancel" type="Button" parent="EWM/Panel/Mcont/Hbox/Vbox/Hbox2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_6507l")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ewde3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ewde3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bhmwx")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bhmwx")
+text = "Batal"
+
+[node name="Button2" type="Button" parent="EWM/Panel/Mcont/Hbox/Vbox/Hbox2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_6507l")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_iew4e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iew4e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oj0mm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oj0mm")
+text = "Terapkan"
 
 [connection signal="gui_input" from="Mcont" to="." method="_on_m_cont_gui_input"]
 [connection signal="pressed" from="Mcont/Vbox/Hbox/Button" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Mcont/Vbox/Hbox/Button3" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Mcont/PlayMenu/Mcont/Hbox/Vbox2/Button" to="Mcont/PlayMenu" method="_on_quit_pressed"]
-[connection signal="pressed" from="Mcont/PlayMenu/Mcont/Hbox/Vbox2/Button3" to="Mcont/PlayMenu" method="_on_create_pressed"]
 [connection signal="pressed" from="Mcont/PlayMenu/Mcont/Hbox/Vbox2/Button4" to="Mcont/PlayMenu" method="_start_game"]
-[connection signal="pressed" from="Mcont/PlayMenu/Mcont/Hbox/Vbox/Button" to="Mcont/PlayMenu" method="_on_refresh"]
+[connection signal="pressed" from="Mcont/PlayMenu/Mcont/Hbox/Vbox2/Hbox/Button3" to="Mcont/PlayMenu" method="_on_create_pressed"]
+[connection signal="pressed" from="Mcont/PlayMenu/Mcont/Hbox/Vbox2/Hbox/Refresh" to="Mcont/PlayMenu" method="_on_wref"]
+[connection signal="pressed" from="Mcont/PlayMenu/Mcont/Hbox/Vbox/Refresh" to="Mcont/PlayMenu" method="_on_refresh"]
 [connection signal="timeout" from="Mcont/PlayMenu/Timer" to="Mcont/PlayMenu" method="_on_br_out"]
+[connection signal="text_changed" from="CWM/Panel/Mcont/Hbox/Vbox/Hbox/Seed" to="Mcont/PlayMenu" method="_on_seed_input_changed"]
+[connection signal="pressed" from="CWM/Panel/Mcont/Hbox/Vbox/Hbox/Rand" to="Mcont/PlayMenu" method="_randomize_seed"]
+[connection signal="pressed" from="CWM/Panel/Mcont/Hbox/Vbox/Hbox2/Cancel" to="Mcont/PlayMenu" method="_on_cancel_wm_pressed"]
+[connection signal="pressed" from="CWM/Panel/Mcont/Hbox/Vbox/Hbox2/Button2" to="Mcont/PlayMenu" method="_on_wm_submit"]
+[connection signal="pressed" from="EWM/Panel/Mcont/Hbox/Vbox/Hbox2/Cancel" to="Mcont/PlayMenu" method="_on_cancel_wm_pressed"]
+[connection signal="pressed" from="EWM/Panel/Mcont/Hbox/Vbox/Hbox2/Button2" to="Mcont/PlayMenu" method="_on_aped_submit"]

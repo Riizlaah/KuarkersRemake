@@ -1,0 +1,130 @@
+[gd_scene load_steps=11 format=3 uid="uid://c76xgaochxtqu"]
+
+[ext_resource type="Script" path="res://script/world_if.gd" id="1_6m20u"]
+[ext_resource type="Texture2D" uid="uid://wqkjaqqbs3ll" path="res://textures/mesh_texture/low_grass.png" id="1_o5xo4"]
+[ext_resource type="FontFile" uid="uid://bike0lalw5uvu" path="res://resources/fonts/UbuntuMono-R.ttf" id="2_dhdtu"]
+[ext_resource type="Texture2D" uid="uid://1rfptgjy3h2r" path="res://textures/edit_icon.png" id="4_6jkm1"]
+[ext_resource type="Texture2D" uid="uid://dlutvr6vwjc5h" path="res://textures/del_icon.png" id="4_gdaqs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18pp2"]
+border_width_top = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qs4lj"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.909804, 0.721569, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slbd2"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.992157, 0.788235, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ade6q"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.92549, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1bav"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.160784, 0.113725, 1)
+
+[node name="Button" type="HBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource("1_6m20u")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Mcont" type="MarginContainer" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Hbox" type="HBoxContainer" parent="Button/Mcont"]
+layout_mode = 2
+
+[node name="Texr" type="TextureRect" parent="Button/Mcont/Hbox"]
+custom_minimum_size = Vector2(108, 72)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("1_o5xo4")
+expand_mode = 1
+
+[node name="Vbox" type="VBoxContainer" parent="Button/Mcont/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Button/Mcont/Hbox/Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_dhdtu")
+theme_override_font_sizes/font_size = 20
+text = "Nama Dunia"
+vertical_alignment = 1
+
+[node name="HS" type="HSeparator" parent="Button/Mcont/Hbox/Vbox"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_18pp2")
+
+[node name="Label2" type="Label" parent="Button/Mcont/Hbox/Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_dhdtu")
+theme_override_font_sizes/font_size = 20
+text = "seed: 09909029"
+vertical_alignment = 1
+
+[node name="Edit" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qs4lj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qs4lj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_slbd2")
+icon = ExtResource("4_6jkm1")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Del" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ade6q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ade6q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h1bav")
+icon = ExtResource("4_gdaqs")
+icon_alignment = 1
+expand_icon = true
+
+[node name="DelConf" type="ConfirmationDialog" parent="."]
+title = "Konfirmasi..."
+initial_position = 1
+ok_button_text = "Ya"
+cancel_button_text = "Tidak"
+
+[connection signal="pressed" from="Button" to="." method="load_world"]
+[connection signal="pressed" from="Edit" to="." method="_on_edit_pressed"]
+[connection signal="pressed" from="Del" to="." method="_on_del_pressed"]
+[connection signal="confirmed" from="DelConf" to="." method="_on_del_conf_confirmed"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://eqvwr62y4qct"]
+
+[ext_resource type="Script" path="res://script/INF_Terrain/bp_3d.gd" id="1_4y48h"]
+[ext_resource type="Texture2D" uid="uid://bx8l15qvm72e8" path="res://textures/mesh_texture/plank.png" id="2_t0l1r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80tg6"]
+albedo_texture = ExtResource("2_t0l1r")
+uv1_scale = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rfpup"]
+material = SubResource("StandardMaterial3D_80tg6")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1wiqq"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="RemovableBase" type="StaticBody3D"]
+collision_layer = 2
+script = ExtResource("1_4y48h")
+stone_type = -1
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("BoxMesh_rfpup")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_1wiqq")
